@@ -51,7 +51,7 @@ Stores the chart of accounts used to classify financial activity.
 | account_type | VARCHAR(50) |  | No | Classification such as Salary, Services, Supplies, or Equipment |
 | active_flag | CHAR(1) |  | No | Indicates whether the account is active (`Y` or `N`) |
 
-
+---
 
 ## Table: fiscal_periods
 
