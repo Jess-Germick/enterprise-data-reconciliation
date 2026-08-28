@@ -49,12 +49,10 @@ Stores the chart of accounts used to classify financial activity.
 | account_number | VARCHAR(20) |  | No | Financial account number |
 | account_name | VARCHAR(100) |  | No | Descriptive account name |
 | account_type | VARCHAR(50) |  | No | Classification such as Salary, Services, Supplies, or Equipment |
-| department_id | INT | FK | No | Department associated with the account |
 | active_flag | CHAR(1) |  | No | Indicates whether the account is active (`Y` or `N`) |
 
 ### Foreign Key
 
-`department_id` → `departments.department_id`
 
 ---
 
@@ -182,14 +180,15 @@ Remaining encumbrance is calculated as:
 
 The primary relationships in the data model are:
 
-- One department can contain many accounts.
-- One department can have many budgets.
+- One department can have many budget records.
 - One department can have many transactions.
 - One department can have many encumbrances.
+- One account can be used by many departments through financial activity.
 - One account can have many budget records.
 - One account can have many transactions.
 - One account can have many encumbrances.
 - One fiscal period can contain many transactions.
+- A department and account are associated through budget, transaction, and encumbrance records rather than through a direct department-to-account relationship.
 
 ---
 
